@@ -1,0 +1,22 @@
+{
+  "name": "brainfuckv2",
+  "version": "1.0.0",
+  "description": "langage brainfuck avec conditions et caractères",
+  "main": "brainfuckv2.js",
+  "scripts": {
+    "test": "node ./brainfuck2.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ThomasT404/brainfuck-v2.git"
+  },
+  "keywords": [
+    "brainfuck"
+  ],
+  "author": "Thomas Tastet",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ThomasT404/brainfuck-v2/issues"
+  },
+  "homepage": "https://github.com/ThomasT404/brainfuck-v2#readme"
+}
