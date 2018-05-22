@@ -97,7 +97,7 @@ process.argv.forEach(function (val, index, array) {
                         var point_b = i
                         for(o = 1; o <= 9; o++){
                             if(data[i + o] == '"') {
-                                point_b += o - 1
+                                point_b += o
                                 o = 9
                             }
                         }
@@ -110,7 +110,6 @@ process.argv.forEach(function (val, index, array) {
                                 } else {
                                     somme = somme + where * 2
                                 }
-                                console.log(somme)
                             }
                             if(where === 0){
                                 where++
@@ -119,7 +118,7 @@ process.argv.forEach(function (val, index, array) {
                             }
                         }
                         table[actual] = somme
-                        i += point_b + 1
+                        i = point_b
                         break
 
                     case "$":
@@ -130,6 +129,6 @@ process.argv.forEach(function (val, index, array) {
 
         });
     } else if(val === '-v'){
-        console.log('BrainFuck 1.8.0')
+        console.log('BrainFuck 1.8.2')
     }
 });
