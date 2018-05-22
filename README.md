@@ -19,3 +19,4 @@ character | what he does
 `.` | Display the character associated with the value where is located the pointer
 `$` | Display the value where is located the pointer
 `[]` | Execute what is between [] as long as the final value is not 0
+`'<<*<<'` | Multiply 2 values

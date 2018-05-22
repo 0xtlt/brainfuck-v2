@@ -4,7 +4,13 @@ const fs = require('fs')
 var interpreteur = ''
 var table = [0]
 var actual = 0
-var for_ = ''
+var for_ = 0
+var multi = {
+    location: 0,
+    star: 0,
+    pointer_1: 0,
+    pointer_2: 0
+}
 process.argv.forEach(function (val, index, array) {
     if(val.substr(0, 4) === 'file'){
         fs.readFile(val.substr(5), 'utf8', function (err,data) {
@@ -48,17 +54,47 @@ process.argv.forEach(function (val, index, array) {
 
                     case "[":
                         for_ = i
-                        // for(o = i; o <= data.indexOf(']'); o++){
-                        //     switch (data[o]){
-                        //         case
-                        //     }
-                        // }
                         break
 
                     case "]":
                         if(table[actual] !== 0){
                             i = for_
                         }
+                        break
+
+                    case "'":
+                            var point = 'a'
+                            var point_a = actual
+                            var point_b = actual
+                            for(o = 1; o <= 99999; o++){
+                                switch(data[i+ o]){
+                                    case "<":
+                                        if(point === 'a'){
+                                            point_a--
+                                        } else {
+                                            point_b--
+                                        }
+                                        break
+
+                                    case ">":
+                                        if(point === 'a'){
+                                            point_a++
+                                        } else {
+                                            point_b++
+                                        }
+                                        break
+
+                                    case "*":
+                                        point = 'b'
+                                        break
+
+                                    case "'":
+                                        table[actual] = table[point_a] * table[point_b]
+                                        i += o
+                                        o = 99999
+                                        break
+                                }
+                            }
                         break
 
                     case "$":
