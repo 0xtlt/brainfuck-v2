@@ -1,6 +1,6 @@
 {
   "name": "brainfuckv2",
-  "version": "1.8.7",
+  "version": "1.8.8",
   "description": "brainfuck language with conditions and characters",
   "main": "brainfuckv2.js",
   "scripts": {

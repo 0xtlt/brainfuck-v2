@@ -125,6 +125,33 @@ process.argv.forEach(function (val, index, array) {
                     case "$":
                         console.log(table[actual])
                         break
+
+                    case '!':
+                        var count = 0
+                        var point_a = i + 1
+                        var point_b = i
+                        for(o = 1; o <= 99999; o++){
+                            if(data[i + o] == '!') {
+                                point_b += o
+                                count = o - 1
+                                o = 99999
+                            }
+                        }
+
+                        var actual_tmp = data.substr(point_a, count)
+                        if(Number(actual_tmp) < 0){
+                            console.log('Error !<0!')
+                        } else {
+                            if(table[actual_tmp] === undefined){
+                                for(v = table.length - 1; v <= actual_tmp - 1; v++){
+                                    table[v] = 0
+                                }
+                            }
+
+                            actual = actual_tmp
+                        }
+                        i = point_b
+                        break
                 }
             }
 
