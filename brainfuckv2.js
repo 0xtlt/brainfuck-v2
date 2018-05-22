@@ -4,6 +4,7 @@ const fs = require('fs')
 var interpreteur = ''
 var table = [0]
 var actual = 0
+var for_ = ''
 process.argv.forEach(function (val, index, array) {
     if(val.substr(0, 4) === 'file'){
         fs.readFile(val.substr(5), 'utf8', function (err,data) {
@@ -39,6 +40,21 @@ process.argv.forEach(function (val, index, array) {
 
                     case "-":
                         table[actual] += -1
+                        break
+
+                    case "[":
+                        for_ = i
+                        // for(o = i; o <= data.indexOf(']'); o++){
+                        //     switch (data[o]){
+                        //         case
+                        //     }
+                        // }
+                        break
+
+                    case "]":
+                        if(table[actual] !== 0){
+                            i = for_
+                        }
                         break
                 }
             }

@@ -6,7 +6,7 @@
 Run `brainfuckv2 file=test.bfk` in cmd
 
 ### Write an brainfuckv2 program
-Example : `++>++<++>--.`
+Example : `++>++<++>--[+].`
 
 ### Features table
 
@@ -17,3 +17,4 @@ character | what he does
 `+` | Add 1 to the actual value where you are
 `-` | Remove 1 to the actual value where you are
 `.` | Display the value where is located the pointer
+`[]` | Execute what is between [] as long as the final value is not 0
