@@ -16,6 +16,6 @@ character | what he does
 `<` | Return to the previous point
 `+` | Add 1 to the actual value where you are
 `-` | Remove 1 to the actual value where you are
-`.` | Display the value where is located the pointer
-`$` | Display the character associated with the value where is located the pointer
+`.` | Display the character associated with the value where is located the pointer
+`$` | Display the value where is located the pointer
 `[]` | Execute what is between [] as long as the final value is not 0

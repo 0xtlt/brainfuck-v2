@@ -31,7 +31,11 @@ process.argv.forEach(function (val, index, array) {
                         break
 
                     case ".":
-                        console.log(table[actual])
+                        if(table[actual] < 31){
+                            console.log(table[actual])
+                        } else {
+                            console.log(String.fromCharCode(table[actual]))
+                        }
                         break
 
                     case "+":
@@ -58,7 +62,7 @@ process.argv.forEach(function (val, index, array) {
                         break
 
                     case "$":
-                        console.log(String.fromCharCode(table[actual]))
+                        console.log(table[actual])
                         break
                 }
             }
