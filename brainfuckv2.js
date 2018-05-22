@@ -1,6 +1,7 @@
 #!/usr/bin/env node
 
 const fs = require('fs')
+const pjson = require('./package.json');
 var interpreteur = ''
 var table = [0]
 var actual = 0
@@ -129,6 +130,6 @@ process.argv.forEach(function (val, index, array) {
 
         });
     } else if(val === '-v'){
-        console.log('BrainFuck 1.8.2')
+        console.log('BrainFuck '+pjson.version)
     }
 });
