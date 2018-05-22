@@ -56,6 +56,10 @@ process.argv.forEach(function (val, index, array) {
                             i = for_
                         }
                         break
+
+                    case "$":
+                        console.log(String.fromCharCode(table[actual]))
+                        break
                 }
             }
 
