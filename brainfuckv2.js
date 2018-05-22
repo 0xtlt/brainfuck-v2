@@ -32,7 +32,7 @@ process.argv.forEach(function (val, index, array) {
                         break
 
                     case ".":
-                        if(table[actual] < 31){
+                        if(String.fromCharCode(table[actual]) === undefined){
                             console.log(table[actual])
                         } else {
                             console.log(String.fromCharCode(table[actual]))
@@ -98,7 +98,7 @@ process.argv.forEach(function (val, index, array) {
                         var point_b = i
                         for(o = 1; o <= 9; o++){
                             if(data[i + o] == '"') {
-                                point_b += o
+                                point_b += o - 1
                                 o = 9
                             }
                         }
@@ -107,9 +107,9 @@ process.argv.forEach(function (val, index, array) {
                         for(v = point_b; v >= point_a; v--){
                             if(data[v] == 1){
                                 if(where === 0){
-                                    somme = somme + 1
+                                    somme += 1
                                 } else {
-                                    somme = somme + where * 2
+                                    somme += where * 2
                                 }
                             }
                             if(where === 0){
@@ -119,7 +119,7 @@ process.argv.forEach(function (val, index, array) {
                             }
                         }
                         table[actual] = somme
-                        i = point_b
+                        i = point_b + 1
                         break
 
                     case "$":
