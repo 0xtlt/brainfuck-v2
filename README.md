@@ -5,6 +5,9 @@
 ### Start your brainfuckv2 program
 Run `brainfuckv2 file=test.bfk` in cmd
 
+### Know the installed version
+Run `brainfuckv2 -v` in cmd
+
 ### Write an brainfuckv2 program
 Example : `++>++<++>--[+].`
 

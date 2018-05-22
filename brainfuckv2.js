@@ -104,5 +104,7 @@ process.argv.forEach(function (val, index, array) {
             }
 
         });
+    } else if(val === '-v'){
+        console.log('BrainFuck 1.7.2')
     }
 });
