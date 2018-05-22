@@ -1,3 +1,5 @@
+#!/usr/bin/env node
+
 const fs = require('fs')
 var interpreteur = ''
 var table = [0]
