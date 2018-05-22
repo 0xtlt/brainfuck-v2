@@ -23,3 +23,4 @@ character | what he does
 `$` | Display the value where is located the pointer
 `[]` | Execute what is between [] as long as the final value is not 0
 `'<<*<<'` | Multiply 2 values
+`"01010101"` | Binary up to 8 bits

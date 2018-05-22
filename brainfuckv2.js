@@ -5,12 +5,6 @@ var interpreteur = ''
 var table = [0]
 var actual = 0
 var for_ = 0
-var multi = {
-    location: 0,
-    star: 0,
-    pointer_1: 0,
-    pointer_2: 0
-}
 process.argv.forEach(function (val, index, array) {
     if(val.substr(0, 4) === 'file'){
         fs.readFile(val.substr(5), 'utf8', function (err,data) {
@@ -95,6 +89,37 @@ process.argv.forEach(function (val, index, array) {
                                         break
                                 }
                             }
+                        break
+
+                    case '"':
+                        var point = 'a'
+                        var point_a = i + 1
+                        var point_b = i
+                        for(o = 1; o <= 9; o++){
+                            if(data[i + o] == '"') {
+                                point_b += o - 1
+                                o = 9
+                            }
+                        }
+                        var where = 0
+                        var somme = 0
+                        for(v = point_b; v >= point_a; v--){
+                            if(data[v] == 1){
+                                if(where === 0){
+                                    somme = somme + 1
+                                } else {
+                                    somme = somme + where * 2
+                                }
+                                console.log(somme)
+                            }
+                            if(where === 0){
+                                where++
+                            } else {
+                                where = where * 2
+                            }
+                        }
+                        table[actual] = somme
+                        i += point_b + 1
                         break
 
                     case "$":
